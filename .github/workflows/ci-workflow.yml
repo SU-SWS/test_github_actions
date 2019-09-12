@@ -10,6 +10,11 @@ jobs:
       - name: Test stuff
         run: |
           pwd
+          echo "-   home   -"
+          ls ~/
+          echo "-   work   -"
+          ls ~/work
+          echo "-   actions   -"
           ls ~/work/test_github_actions/test_github_actions
 #          sudo apt-get update
 #          sudo apt-get install apache2
