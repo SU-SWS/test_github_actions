@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: Show the word dir
         run: |
-          mysql -u root -ppassword -e "show databases"
+          mysql -u root -proot -e "show databases"
           ls /var
           curl localhost
