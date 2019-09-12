@@ -10,6 +10,7 @@ jobs:
       - name: Test stuff
         run: |
           ls ./
+          ls ~/
           pwd
           sudo apt-get update
           sudo apt-get install apache2
