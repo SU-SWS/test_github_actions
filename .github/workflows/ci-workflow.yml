@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Show the word dir
         run: |
+          apache2ctl stop
+          apache2ctl start
           ls /var
           php -r 'phpinfo();'
-          curl localhost:8080
+          curl localhost
