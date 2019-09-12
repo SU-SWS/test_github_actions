@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Test stuff
         run: |
-          ls ~/runner/work/test_github_actions
-          ls ~/
+          pwd
+          ls ~/runner
           pwd
           sudo apt-get update
           sudo apt-get install apache2
