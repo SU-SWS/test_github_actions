@@ -7,7 +7,8 @@ jobs:
     name: Build the setup
     runs-on: ubuntu-latest
     steps:
-      - name: Show the word dir
+      - name: Test stuff
         run: |
           mysql -u root -proot -e "show databases"
+          apt-get install apache2
           curl 127.0.0.1
