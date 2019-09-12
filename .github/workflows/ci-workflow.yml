@@ -5,10 +5,11 @@ on: [push]
 jobs:
   build:
     name: Build the setup
-    runs-on: ubuntu-latest
-    services:
-      drupal8ci:
-        image: pookmish/drupal8ci:latest
+    runs-on: pookmish/drupal8ci:latest
+#    runs-on: ubuntu-latest
+#    services:
+#      drupal8ci:
+#        image: pookmish/drupal8ci:latest
     steps:
       - name: Test stuff
         run: |
