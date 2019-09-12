@@ -10,5 +10,5 @@ jobs:
       - name: Test stuff
         run: |
           mysql -u root -proot -e "show databases"
-          sudo apt-get install apache2
+          sudo apt-get update && apt-get install apache2
           curl 127.0.0.1
