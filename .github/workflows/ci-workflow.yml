@@ -4,10 +4,8 @@ on: [push]
 
 jobs:
   build:
-    # Job name is Greeting
-    name: Greeting
-    # This job runs on Linux
+    name: Build the setup
     runs-on: ubuntu-latest
     steps:
-      - name: Echo the greeting's time
-        run: echo pwd
+      - name: Show the word dir
+        run: pwd
