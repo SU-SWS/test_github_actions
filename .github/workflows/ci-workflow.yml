@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Test stuff
         run: |
+          ls ./
+          pwd
           sudo apt-get update
           sudo apt-get install apache2
           composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
