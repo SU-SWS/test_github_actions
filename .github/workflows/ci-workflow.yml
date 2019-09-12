@@ -11,4 +11,4 @@ jobs:
         run: |
           ls /var
           php -r 'phpinfo();'
-          ls /var/www
+          curl localhost
