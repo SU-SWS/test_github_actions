@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Test stuff
         run: |
-          ls ./
+          ls ~/runner/work/test_github_actions
           ls ~/
           pwd
           sudo apt-get update
@@ -17,4 +17,4 @@ jobs:
           composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
           sudo chmod -R 777 /var/www
           rm -rf /var/www/*
-          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/ --extension-dir=/var/www/test --with-coverage
+          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/ --extension-dir=~/runner/work/test_github_actions/test_github_actions --with-coverage
