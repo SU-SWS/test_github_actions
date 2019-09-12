@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Test stuff
         run: |
+          pwd
+          ls /var/www
           curl localhost
 #          pwd
 #          echo "-   home   -"
