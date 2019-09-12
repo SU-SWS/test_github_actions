@@ -10,5 +10,4 @@ jobs:
       - name: Show the word dir
         run: |
           mysql -u root -proot -e "show databases"
-          ls /var
           curl 127.0.0.1
