@@ -8,4 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show the word dir
-        run: ls /etc/apache2
+        run: |
+          ls /var
+          php -r 'phpinfo();'
+          ls /var/www
