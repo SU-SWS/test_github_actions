@@ -6,16 +6,24 @@ jobs:
   build:
     name: Build the setup
     runs-on: ubuntu-latest
+    services:
+      nginx:
+        image: nginx
+        ports:
+          - 8080:80
+        env:
+          NGINX_PORT: 80
     steps:
       - name: Test stuff
         run: |
-          pwd
-          echo "-   home   -"
-          ls ~/
-          echo "-   work   -"
-          ls ~/work
-          echo "-   actions   -"
-          ls ~/work/test_github_actions/test_github_actions
+          curl localhost
+#          pwd
+#          echo "-   home   -"
+#          ls ~/
+#          echo "-   work   -"
+#          ls ~/work
+#          echo "-   actions   -"
+#          ls ~/work/test_github_actions/test_github_actions
 #          sudo apt-get update
 #          sudo apt-get install apache2
 #          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
