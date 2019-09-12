@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Test stuff
         run: |
-          mysql -u root -proot -e "show databases"
           sudo apt-get update
-          sudo apt-get install lighttpd
-          curl 127.0.0.1
+          sudo apt-get install apache2
+          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
+          sudo chmod -R 777 /var/www
+          rm -rf /var/www/*
+          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/ --extension-dir=/var/www/test --with-coverage
