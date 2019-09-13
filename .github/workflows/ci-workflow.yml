@@ -11,6 +11,11 @@ jobs:
       ports:
         - 80
         - 8080
+    services:
+      mariadb:
+        image: mariadb:1.3
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 1
     steps:
       - name: Test stuff
         run: |
@@ -22,7 +27,7 @@ jobs:
           apachectl start
           curl localhost
           php -v
-          mysql -u root -proot -e "show databases"
+          mysql -u root -e "show databases"
 #          pwd
 #          echo "-   home   -"
 #          ls ~/
