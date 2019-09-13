@@ -20,8 +20,9 @@ jobs:
           echo '<h1>Hi</h1>' > /var/www/html/docroot/index.html
           apachectl stop
           apachectl start
-
           curl localhost
+          php -v
+          mysql -u root -proot -e "show databases"
 #          pwd
 #          echo "-   home   -"
 #          ls ~/
