@@ -16,7 +16,8 @@ jobs:
         run: |
           pwd
           ls /var/www/html
-          echo '<h1>Hi</h1>' > /var/www/html/index.html
+          mkdir /var/www/html/docroot
+          echo '<h1>Hi</h1>' > /var/www/html/docroot/index.html
           apachectl stop
           apachectl start
 
