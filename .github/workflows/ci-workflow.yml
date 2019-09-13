@@ -16,6 +16,9 @@ jobs:
         run: |
           pwd
           ls /var/www/html
+          echo '<h1>Hi</h1>' > /var/www/html/index.html
+          apachectl stop
+          apachectl start
           curl localhost
 #          pwd
 #          echo "-   home   -"
