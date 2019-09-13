@@ -10,11 +10,12 @@ jobs:
       image: pookmish/drupal8ci:latest
       ports:
         - 80
+        - 8080
     steps:
       - name: Test stuff
         run: |
           pwd
-          ls /var/www
+          ls /var/www/html
           curl localhost
 #          pwd
 #          echo "-   home   -"
