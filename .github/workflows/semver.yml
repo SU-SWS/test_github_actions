@@ -1,18 +1,36 @@
-# .github/workflows/release.yml
-name: Release
+# # .github/workflows/release.yml
+# name: Release
 
+# on:
+#   pull_request:
+#     types: closed
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Tag
+#         uses: K-Phoen/semver-release-action@master
+#         with:
+#           release_branch: master
+#           tag_format: "%major%.%minor%.%patch%"
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: Tag Commits to Master
 on:
-  pull_request:
-    types: closed
-
+  push:
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Tag
-        uses: K-Phoen/semver-release-action@master
-        with:
-          release_branch: master
-          tag_format: "%major%.%minor%.%patch%"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: '0'
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.19.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: false
+        DEFAULT_BUMP: patch
