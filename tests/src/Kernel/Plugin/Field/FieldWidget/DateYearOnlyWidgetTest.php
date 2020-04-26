@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\stanford_fields\Kernel\Plugin\Field\FieldWidget;
+namespace Drupal\Tests\test_github_actions\Kernel\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Field\FieldDefinitionInterface;
@@ -10,13 +10,13 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
-use Drupal\stanford_fields\Plugin\Field\FieldWidget\DateYearOnlyWidget;
+use Drupal\test_github_actions\Plugin\Field\FieldWidget\DateYearOnlyWidget;
 
 /**
  * Class DateYearOnlyWidgetTest
  *
  * @group
- * @coversDefaultClass \Drupal\stanford_fields\Plugin\Field\FieldWidget\DateYearOnlyWidget
+ * @coversDefaultClass \Drupal\test_github_actions\Plugin\Field\FieldWidget\DateYearOnlyWidget
  */
 class DateYearOnlyWidgetTest extends KernelTestBase {
 
@@ -29,7 +29,7 @@ class DateYearOnlyWidgetTest extends KernelTestBase {
     'node',
     'user',
     'datetime',
-    'stanford_fields',
+    'test_github_actions',
     'field',
   ];
 
