@@ -22,5 +22,5 @@ jobs:
           composer global config minimum-stability dev
           ls ./
           pwd
-          # composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
-          # ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE --with-coverage
+          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
+          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE --with-coverage
