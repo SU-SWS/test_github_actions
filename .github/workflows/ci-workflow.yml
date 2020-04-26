@@ -1,14 +1,23 @@
-name: Test Actions
-# This workflow is triggered on pushes to the repository.
-on: [push]
-
+on: [push, pull_request]
+name: Tests and code
 jobs:
-  build:
-    name: Build the setup
+  phpunit:
     runs-on: ubuntu-latest
+    container:
+      image: pookmish/drupal8ci:pcov
+
+    services:
+      mariadb:
+        image: quay.io/juampynr/drupal8-github-actions:latest
+        ports:
+          - 33306:3306
+
     steps:
-      - name: Show the word dir
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Run PHPUnit tests
         run: |
-          mysql -u root -proot -e "show databases"
-          ls /var
-          curl 127.0.0.1
+          composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
+          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=/var/www/test --with-coverage
